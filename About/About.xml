@@ -23,7 +23,7 @@
 			<displayName>Biotech</displayName>
 		</li>
 		<li>
-			<packageId>Ludgeon.RimWorld.Royalty</packageId>
+			<packageId>Ludeon.RimWorld.Royalty</packageId>
 			<displayName>Royalty</displayName>
 		</li>
 	</modDependencies>
