@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>VREA_Addon_PsychicCoils</defName>
+		<label>psychic coils</label>
+		<description>Androids with this subroutine have eltex coils implanted within their central processor housing, which grants them a psychic prescence, allowing them to utilzie Psychic abilities, and be affected by them.</description>
+		<iconPath>UI/Icons/Genes/PsychicCoils</iconPath>
+		<displayOrderInCategory>20</displayOrderInCategory>
+		<biostatCpx>5</biostatCpx>
+		<biostatMet>-6</biostatMet>
+		<statFactors>
+			<PsychicSensitivity>1</PsychicSensitivity>
+		</statFactors>
+		
+		<exclusionTags>
+			<li>VREA_PsychicSensitivity</li>
+		</exclusionTags>
+	</VREAndroids.AndroidGeneDef>
+</Defs>
