@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <PrivateAssets>all</PrivateAssets>
       <Version>1.5.4104</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
