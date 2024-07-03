@@ -11,26 +11,22 @@ using UnityEngine;
 
 namespace Psychic_Coiling_VRE_Addon
 {
+    // The below code is courtesy of @Vera from the Dubs Mods discord server
+    // Huge thanks to them and @TruGerman for all the help!
+
     [HarmonyPatch(typeof(Pawn_PsychicEntropyTracker), "PsychicEntropyTrackerTick")]
-    public class EntropyTickPatch
+    public class AndroidEntropyHandler
     {
-        public const float secsPerTick = 0.0166666675F;
-        [HarmonyPrefix]
-        public static bool EntropyToCoilStress(Pawn_PsychicEntropyTracker __instance, float ___currentEntropy, Pawn ___pawn)
+        [HarmonyPostfix]
+        public static void EnsureEntropyHediff(float ___currentEntropy, Pawn ___pawn)
         {
-            if (!___pawn.IsAndroid())
+            if (___currentEntropy > float.Epsilon && ___pawn.IsAndroid())
             {
-                return true;
+                if (!___pawn.health.hediffSet.HasHediff(VREAPC_InternalDefs.VREAPC_PsychicCoilStress))
+                {
+                    ___pawn.health.AddHediff(VREAPC_InternalDefs.VREAPC_PsychicCoilStress);
+                }
             }
-            if (___currentEntropy > float.Epsilon)
-            {
-                ___currentEntropy = Mathf.Max(___currentEntropy - secsPerTick * __instance.RecoveryRate, 0f);
-            }
-            if (___currentEntropy > float.Epsilon && !___pawn.health.hediffSet.HasHediff(VREAPC_InternalDefs.VREAPC_PsychicCoilStress))
-            {
-                ___pawn.health.AddHediff(VREAPC_InternalDefs.VREAPC_PsychicCoilStress);
-            }
-            return true;
         }
     }
 }
