@@ -9,14 +9,14 @@ using RimWorld;
 namespace Psychic_Coiling_VRE_Addon
 {
     [DefOf]
-    public static class InternalDefs
+    public static class VREAPC_InternalDefs
     {
         public static GeneDef VREA_Addon_PsychicCoils;
         public static HediffDef VREAPC_PsychicCoilStress;
 
-        static InternalDefs()
+        static VREAPC_InternalDefs()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(InternalDefs));
+            DefOfHelper.EnsureInitializedInCtor(typeof(VREAPC_InternalDefs));
         }
     }
 }

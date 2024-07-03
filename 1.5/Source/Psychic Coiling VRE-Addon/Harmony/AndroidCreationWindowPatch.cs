@@ -20,7 +20,7 @@ namespace Psychic_Coiling_VRE_Addon
             {
                 GeneLeftChosenGroup geneLeftChosenGroup = ___leftChosenGroups[0];
 
-                if (geneLeftChosenGroup.leftChosen == InternalDefs.VREA_Addon_PsychicCoils)
+                if (geneLeftChosenGroup.leftChosen == VREAPC_InternalDefs.VREA_Addon_PsychicCoils)
                 {
                     __result = true;
                 }
@@ -37,7 +37,7 @@ namespace Psychic_Coiling_VRE_Addon
             {
                 GeneLeftChosenGroup geneLeftChosenGroup = ___leftChosenGroups[0];
 
-                if (geneLeftChosenGroup.leftChosen == InternalDefs.VREA_Addon_PsychicCoils)
+                if (geneLeftChosenGroup.leftChosen == VREAPC_InternalDefs.VREA_Addon_PsychicCoils)
                 {
                     ___leftChosenGroups.Pop();
                 }

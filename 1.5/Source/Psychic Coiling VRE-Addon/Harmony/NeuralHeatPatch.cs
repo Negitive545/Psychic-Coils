@@ -14,6 +14,7 @@ namespace Psychic_Coiling_VRE_Addon
     [HarmonyPatch(typeof(Pawn_PsychicEntropyTracker), "PsychicEntropyTrackerTick")]
     public class EntropyTickPatch
     {
+        public const float secsPerTick = 0.0166666675F;
         [HarmonyPrefix]
         public static bool EntropyToCoilStress(Pawn_PsychicEntropyTracker __instance, float ___currentEntropy, Pawn ___pawn)
         {
@@ -23,11 +24,11 @@ namespace Psychic_Coiling_VRE_Addon
             }
             if (___currentEntropy > float.Epsilon)
             {
-                ___currentEntropy = Mathf.Max(___currentEntropy - 1.TicksToSeconds() * __instance.RecoveryRate, 0f);
+                ___currentEntropy = Mathf.Max(___currentEntropy - secsPerTick * __instance.RecoveryRate, 0f);
             }
-            if (___currentEntropy > float.Epsilon && !___pawn.health.hediffSet.HasHediff(InternalDefs.VREAPC_PsychicCoilStress))
+            if (___currentEntropy > float.Epsilon && !___pawn.health.hediffSet.HasHediff(VREAPC_InternalDefs.VREAPC_PsychicCoilStress))
             {
-                ___pawn.health.AddHediff(InternalDefs.VREAPC_PsychicCoilStress);
+                ___pawn.health.AddHediff(VREAPC_InternalDefs.VREAPC_PsychicCoilStress);
             }
             return true;
         }

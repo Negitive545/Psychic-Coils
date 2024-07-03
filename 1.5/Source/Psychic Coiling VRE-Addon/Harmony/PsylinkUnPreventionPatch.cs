@@ -16,7 +16,7 @@ namespace Psychic_Coiling_VRE_Addon
         public static void Postfix(ref bool __result, object[] __args)
         {
             Hediff_Psylink instance = (Hediff_Psylink)__args[0];
-            if (instance.pawn.IsAndroid() && instance.pawn.HasActiveGene(InternalDefs.VREA_Addon_PsychicCoils))
+            if (instance.pawn.IsAndroid() && instance.pawn.HasActiveGene(VREAPC_InternalDefs.VREA_Addon_PsychicCoils))
             {
                 __result = true;
             }

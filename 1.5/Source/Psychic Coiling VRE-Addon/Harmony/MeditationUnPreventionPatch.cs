@@ -16,7 +16,7 @@ namespace Psychic_Coiling_VRE_Addon
     {
         public static bool Prefix(Pawn p)
         {
-            if (p.HasActiveGene(VREA_DefOf.VREA_JoyDisabled) && p.HasActiveGene(InternalDefs.VREA_Addon_PsychicCoils))
+            if (p.HasActiveGene(VREA_DefOf.VREA_JoyDisabled) && p.HasActiveGene(VREAPC_InternalDefs.VREA_Addon_PsychicCoils))
             {
                 return false;
             }
@@ -29,7 +29,7 @@ namespace Psychic_Coiling_VRE_Addon
     {
         public static bool Prefix(Pawn pawn)
         {
-            if (pawn.HasActiveGene(VREA_DefOf.VREA_JoyDisabled) && pawn.HasActiveGene(InternalDefs.VREA_Addon_PsychicCoils))
+            if (pawn.HasActiveGene(VREA_DefOf.VREA_JoyDisabled) && pawn.HasActiveGene(VREAPC_InternalDefs.VREA_Addon_PsychicCoils))
             {
                 return false;
             }
@@ -43,7 +43,7 @@ namespace Psychic_Coiling_VRE_Addon
         [HarmonyPriority(Priority.High)]
         public static void PostFix(ref bool __result, Pawn pawn)
         {
-            if (pawn.HasActiveGene(VREAndroids.VREA_DefOf.VREA_JoyDisabled) && !(pawn.HasActiveGene(InternalDefs.VREA_Addon_PsychicCoils)))
+            if (pawn.HasActiveGene(VREAndroids.VREA_DefOf.VREA_JoyDisabled) && !(pawn.HasActiveGene(VREAPC_InternalDefs.VREA_Addon_PsychicCoils)))
             {
                 __result = false;
             }
@@ -56,7 +56,7 @@ namespace Psychic_Coiling_VRE_Addon
         [HarmonyPriority(Priority.High)]
         public static void PostFix(ref Job __result, Pawn pawn)
         {
-            if (pawn.HasActiveGene(VREAndroids.VREA_DefOf.VREA_JoyDisabled) && pawn.HasActiveGene(InternalDefs.VREA_Addon_PsychicCoils))
+            if (pawn.HasActiveGene(VREAndroids.VREA_DefOf.VREA_JoyDisabled) && pawn.HasActiveGene(VREAPC_InternalDefs.VREA_Addon_PsychicCoils))
             {
                 __result = MeditationUtility.GetMeditationJob(pawn, forJoy: false);
             }
@@ -71,7 +71,7 @@ namespace Psychic_Coiling_VRE_Addon
         {
             if (__result && req.Thing is Pawn pawn && pawn.IsAndroid())
             {
-                if (___stat == StatDefOf.MeditationFocusGain && pawn.HasActiveGene(InternalDefs.VREA_Addon_PsychicCoils))
+                if (___stat == StatDefOf.MeditationFocusGain && pawn.HasActiveGene(VREAPC_InternalDefs.VREA_Addon_PsychicCoils))
                 {
                     __result = true;
                 }

@@ -19,7 +19,7 @@ namespace Psychic_Coiling_VRE_Addon
             {
                 return true;
             }
-            if (pawn.IsAndroid() && pawn.HasActiveGene(InternalDefs.VREA_Addon_PsychicCoils) && pawn.psychicEntropy == null)
+            if (pawn.IsAndroid() && pawn.HasActiveGene(VREAPC_InternalDefs.VREA_Addon_PsychicCoils) && pawn.psychicEntropy == null)
             {
                 pawn.psychicEntropy = new Pawn_PsychicEntropyTracker(pawn);
             }
@@ -36,7 +36,7 @@ namespace Psychic_Coiling_VRE_Addon
             {
                 return true;
             }
-            if (pawn.IsAndroid() && pawn.HasActiveGene(InternalDefs.VREA_Addon_PsychicCoils) && pawn.psychicEntropy == null)
+            if (pawn.IsAndroid() && pawn.HasActiveGene(VREAPC_InternalDefs.VREA_Addon_PsychicCoils) && pawn.psychicEntropy == null)
             {
                 pawn.psychicEntropy = new Pawn_PsychicEntropyTracker(pawn);
             }
