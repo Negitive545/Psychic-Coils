@@ -20,7 +20,7 @@
 		<defName>VREA_Addon_PsychicCoils</defName>
 		<label>psychic coils</label>
 		<description>Androids with this subroutine have eltex coils implanted within their central processor housing, which grants them a psychic prescence, allowing them to utilzie Psychic abilities, and be affected by them.</description>
-		<iconPath>UI/Icons/Genes/PsychicCoils</iconPath>
+		<iconPath>UI/Icons/Genes/VREAPC_EnabledPsychics</iconPath>
 		<displayOrderInCategory>25</displayOrderInCategory>
 		<biostatCpx>5</biostatCpx>
 		<biostatMet>-6</biostatMet>
